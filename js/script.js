@@ -373,3 +373,246 @@ suficiente;
  } else {
   console.log("Pode Participar.")
  }
+
+   /* Estrutura condicional: switch
+ ● O switch pode ser utilizado para organização de um 
+excesso de if/else;
+ ● Cada if seria um case;
+ ● Para cada case, temos que adicionar um break;
+ ● E temos o default, que é como o else; */
+
+ /* SINTAXE: switch (expressao) {
+  case valor1:
+    
+    break
+  case valor2:
+    
+    break
+  
+  default:
+    // código a ser executado se nenhum dos casos anteriores for correspondido
+} 
+    
+*/
+
+// EXEMPLO 01
+
+const job = "Motoboy"
+
+switch (job){
+  case "Programador":
+    console.log("Você é um programador!")
+    break
+  case "Advogado":
+    console.log("Você é um Advogado!")
+    break
+  case "Engenheiro":
+    console.log("Você é um Engenheiro!")
+    break
+  default:
+    console.log("Profissão não encontrada!")
+} 
+
+ //INCREMENTO E DECREMENTO: são usados para aumentar ou diminuir o valor de uma variável numérica em +1 OU -1
+
+ // ANTES DA VARIÁVEL: Quando você usa o operador de incremento ou decremento antes da variável (++variavel ou --variavel), a mudança é feita imediatamente.  
+
+ // EXEMPLO 01 - INCREMENTO 
+
+ let contagemMais = 5
+ let resultadoMais = ++contagemMais * 2
+ console.log(`O resultadoMais ficou: ${resultadoMais}`)
+ console.log(`O contagemMais virou: ${contagemMais}`) 
+
+ // EXEMPLO 02 - DECREMENTO
+
+ let contagemMenos = 5
+ let resultadoMenos = --contagemMenos * 2
+ console.log(`O resultadoMenos ficou: ${resultadoMenos}`)
+ console.log(`O contagemMenos virou: ${contagemMenos}`)
+
+
+  //DEPOIS DA VARIAVEL: Quando você usa o operador de incremento ou decremento depois da variável (variavel++), o valor inicial da variável é usado em qualquer expressão aí só depois é efetuado a mudança.
+
+ let contagemMais2 = 6
+ let resultadoMais2 = contagemMais2++ * 2
+ console.log(`O resultadoMais2 ficou: ${resultadoMais2}`)
+ console.log(`O contagemMais2 virou: ${contagemMais2}`) 
+
+ let contagemMenos2 = 5
+ let resultadoMenos2 = contagemMenos2-- * 2
+ console.log(`O resultadoMenos2 ficou: ${resultadoMenos2}`)
+ console.log(`A contagemMenos2 virou: ${contagemMenos2}`) 
+
+ 
+ //ESTRUTURAS DE REPETIÇÃO
+  /* O que são estruturas de repetição?
+ ● Um bloco de código que se repete até uma 
+condição ser satisfeita;
+ ● Isso evita a repetição desnecessária do nosso 
+código;
+ ● A suas sintaxes são diferentes, mas as duas chegam 
+no mesmo resultado;
+ ● Temos que nos atentar ao loop infinito */
+
+ //WHILE:  é usada para repetir um bloco de código enquanto uma condição especificada for verdadeira.
+
+ /*SINTAXE: while (condição) {} */
+
+ // EXEMPLO 01 - Feliz Ano Novo
+
+ let contagemRegressiva = 10
+
+ while (contagemRegressiva >= 0){
+  console.log(contagemRegressiva)
+  contagemRegressiva--
+ }
+ console.log("Feliz ano novo Negada!!!")
+
+ // EXEMPLO 02 
+
+ let estoque = 5
+
+ while (estoque > 0) {
+  console.log("Produto em Estoque . Quantidade restante: " + estoque)
+  estoque--
+ }
+ console.log("Produto Esgotado!")
+
+ //FOR: é usada quando você sabe exatamente quantas vezes deseja repetir uma ação. Ele consiste em três partes: inicialização, condição e expressão final.
+
+/* SINTAXE: for (inicialização; condição; expressão final) {} */
+
+// EXEMPLO 01 
+
+for (let i = 0; i < 10; i++){
+  console.log("Repetindo algo...")
+}
+
+// EXEMPLO 02 
+
+let estoque1 = 10
+
+for (estoque1; estoque1 > 0; estoque1 = estoque1 - 1){
+  console.log(`O estoque está diminuindo: ${estoque1}`)
+}
+console.log(`O estoque é igual a ${estoque1}`)
+
+/* Forçando a saída de um loop
+ ● Com a instrução de break podemos parar um loop, 
+fazendo que repetições cessem;
+ ● Isso pode poupar memória, pois o código será 
+executado menos vezes;
+ ● Não é tão comum, mas é um recurso válido do javascripitis; */
+
+ // EXEMPLO 01 
+
+ let estoque2 = 20
+ for (estoque2; estoque2 > 10; estoque2--){
+  console.log(`O estoque é: ${estoque2}`)
+
+  if (estoque2 === 12){
+    console.log("Atenção! O estoque chegou a 12!")
+  break
+  }
+ }
+
+/* Pulando uma execução do loop
+ ● A palavra reservada continue, pode pular uma ou 
+mais execuções do loop;
+ ● É um recurso utilizado de forma semelhante ao 
+break; */
+
+// EXEMPLO 01
+
+for (let e = 1; e <= 5; e++){
+  if (e === 3){
+    continue
+  }
+  console.log("Contagem: " + e)
+}
+
+/* O que são funções?
+ ● Estruturas de código menores, podemos dividir 
+nosso código em várias funções;
+ ● O ideal é que cada uma tenha apenas um único 
+objetivo;
+ ● Isso nos faz poupar código, pois podemos 
+reaproveitá-las;
+ ● A linguagem tem várias funções já criadas, e nós 
+podemos criar as nossas;
+
+    Definindo uma função
+  ● A estrutura da função é um pouco mais complexa;
+  ● Primeiramente utilizamos a palavra function, isso 
+  inicia uma função;
+  ● Precisamos depois nomeá-la;
+  ● Os parâmetros, que são uma espécie de 
+  configuração, ficam entre ( ) depois do nome;
+  ● O corpo da função fica entre  { };
+  ● Geralmente uma função retorna um valor; */
+
+  // SINTAXE: function nomeDaFuncao () {}
+
+  // EXEMPLO 01 
+
+  function minhaFuncao() {
+    console.log("Testando 1 2 3!!!")
+  }
+
+minhaFuncao()
+
+// EXEMPLO 02
+
+const minhaFuncaoEmVariavel = function (){
+  console.log("Usamos uma função em uma variável!")
+}
+
+minhaFuncaoEmVariavel()
+
+// EXEMPLO 03 
+
+function funcaoComParametro(txt) {
+  console.log(`Imprimindo: ${txt}`)
+}
+
+funcaoComParametro("Fala galera!!!")
+
+/* Usa return é fundamental em funções porque permite que elas produzam algum resultado que pode ser usado em outras partes do código. Sem o return, não conseguimos usar o resultado dela em outra parte do código. */
+
+
+const a = 10
+const b = 20
+const c = 30
+const d = 40
+
+function somandoNumeros (n1, n2){
+  return n1 + n2
+}
+
+const resultado = somandoNumeros (a, b)
+
+console.log(resultado)
+
+console.log(somandoNumeros(c, d))
+
+/* Escopo das funções:
+ ● As funções tem um escopo separado do escopo do 
+programa, que é o global;
+ ● Este escopo faz com que variáveis de fora não 
+funcionem dentro;
+ ● Podemos então declarar novas variáveis, sem 
+interferir nas já declaradas;*/
+
+// EXEMPLO 01 
+
+let varTeste = 10
+
+function testandoEscopo (){
+  let varTeste = 20
+  console.log(`EXEMPLO ESCOPO: Variável dentro da função: ${varTeste}`)
+}
+
+console.log(`EXEMPLO ESCOPO: Variável fora da função: ${varTeste}`)
+
+testandoEscopo()
